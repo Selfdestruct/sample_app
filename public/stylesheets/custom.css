@@ -22,6 +22,11 @@ section {
 	background: #fff;
 }
 
+section h1 {
+	font-size: 200%;
+}
+}
+
 /* Links */
 
 a {
@@ -65,6 +70,7 @@ nav ul li {
 nav ul li a {
 	padding: 0 5px;
 	font-weight: bold;
+	text-decoration: none;
 }
 
 nav ul li a:visited {
@@ -86,6 +92,12 @@ a.signup_button {
 	font-size: 150%;
 	font-weight: bold;
 	padding: 20px;
+	text-decoration: none;
+
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 /* Round Corners */
