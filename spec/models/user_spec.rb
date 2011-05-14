@@ -142,6 +142,7 @@ describe User do
     end
     
     describe "authenticate method" do
+      
       it "should return nil on email/password mismatch" do 
         User.authenticate(@attr[:email], "wrongpass").should be_nil
       end
