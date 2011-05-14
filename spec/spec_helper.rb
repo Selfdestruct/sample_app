@@ -84,6 +84,10 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 end
 
+  # def test_sign_in(user)  DONT NEED
+  #   controller.current_user = user
+  # end
+
 # Webrat configuration
 Webrat.configure do |config|
 config.mode = :rails
