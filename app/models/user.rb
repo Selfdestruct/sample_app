@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   attr_accessor   :password
   attr_accessible :name, :email, :password, :password_confirmation
   
+  has_many :microposts, :dependent => :destroy
+  
   email_regex = /\A[\w+\-.]+@[a-z+\d\-.]+\.[a-z]+\z/i
   
   validates :name,  :presence   => true,
@@ -67,4 +69,6 @@ class User < ActiveRecord::Base
       def secure_hash(string)
         Digest::SHA2.hexdigest(string)
       end
-end
+    end
+
+  
