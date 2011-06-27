@@ -6,7 +6,7 @@ namespace :db do
   task :populate => :environment do
     Rake::Task['db:reset'].invoke
     admin = User.create!(:name => "Ryan Zschau",
-                         :email => "rzschau@gmailcom",
+                         :email => "sample@railstutorial.org",
                          :password => "foobar",
                          :password_confirmation => "foobar")
    admin.toggle!(:admin)
@@ -19,6 +19,11 @@ namespace :db do
                    :password => password,
                    :password_confirmation => password)
     end
+ 
+    User.all(:limit => 6).each do |user|
+      50.times do
+        user.microposts.create!(:content => Faker::Lorem.sentence(5))
+      end
+    end
   end
-  
 end
